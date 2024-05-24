@@ -319,7 +319,7 @@ You'll need to load the extension after the library. This will load Crystal's JS
 
 ```crystal
 require "wkb"
-require "wkb_ext/geojson"
+require "wkb/geojson"
 
 point2D = WKB::Point.new([1.0, 2.0])
 

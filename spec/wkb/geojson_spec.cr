@@ -1,5 +1,5 @@
 require "../spec_helper"
-require "../../src/wkb_ext/geojson"
+require "../../src/wkb/geojson"
 
 describe "GeoJSON extension" do
   # Examples taken from https://en.wikipedia.org/wiki/GeoJSON
