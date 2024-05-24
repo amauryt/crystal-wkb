@@ -84,19 +84,19 @@ module WKB
         kind = ObjectKind.new(type_data)
       else # Non-basic WKB
         # Ext and ExtSRID flavors
-        has_z ||= type_data & 0x80000000 != 0
-        has_m ||= type_data & 0x40000000 != 0
+        has_z = type_data & 0x80000000 != 0
+        has_m = type_data & 0x40000000 != 0
         has_srid = type_data & 0x20000000 != 0
         srid = @io.read_bytes(UInt32, @format).to_i32 if has_srid
         if has_z || has_m || has_srid
           kind = ObjectKind.new(type_data & 0x0fffffff)
         else
           # ISO flavor
-          has_z ||= (type_data // 1000) & 1 != 0
-          has_m ||= (type_data // 1000) & 2 != 0
+          has_z = (type_data // 1000) & 1 != 0
+          has_m = (type_data // 1000) & 2 != 0
           kind = ObjectKind.new(type_data % 1000)
         end
-        if has_z && has_m
+        if has_m && has_z
           mode = Mode::XYZM
         elsif has_z
           mode = Mode::XYZ
