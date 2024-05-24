@@ -381,6 +381,55 @@ wkb_multi_point = WKB::Point.new(gjo_multi_point.coordinates.map(&.coordinates))
 
 Given that the extension is optional, you could also implement your own (Geo)JSON serialization.
 
+## Geometries on a Database
+
+This library can be used to communicate with any system that implements WKB, including many database engines. Below is a full example of using it to receive and transmit geometry data from and to PostGIS using [crystal-pg](https://github.com/will/crystal-pg), the Postgres driver for [crystal-db](https://github.com/crystal-lang/crystal-db).
+
+```crystal
+require "db"
+require "pg"
+require "wkb"
+require "wkb/geojson" # Needed for GeoJSON support
+
+decoder = WKB::BinDecoder.new
+encoder = WKB::BinEncoder.new(WKB::Flavor::Ext) # or `ExtSRID` if you use SRID
+
+polygon_json = <<-JSON
+  {
+    "type": "Polygon", 
+    "coordinates": [
+      [
+          [35.0, 10.0],
+          [45.0, 45.0],
+          [15.0, 40.0],
+          [10.0, 20.0],
+          [35.0, 10.0]
+      ]
+    ]
+  }
+JSON
+
+DB.open("postgres://user:password@host:port/db_name") do |db|
+  point_bytes = db.scalar("SELECT 'POINT(1 2 3)'::GEOMETRY;").as(Bytes)
+  point = decoder.decode(point_bytes).as(WKB::Point)
+  point.z # => 3.0
+  point.to_json # => "{\"type\":\"Point\",\"coordinates\":[1.0,2.0,3.0]}
+
+  line_string = WKB::LineString.new([[1.0, 2.0], [3.0, 4.0]])
+  line_string_bytes = encoder.encode(line_string)
+  num_points = db.scalar("SELECT ST_NumPoints($1::GEOMETRY)", line_string_bytes).as(Int32)
+  num_points # => 2
+
+  polygon = WKB::Polygon.from_json(polygon_json)
+  polygon_bytes = encoder.encode(polygon)
+  polygon_perimeter = db.scalar("SELECT ST_Perimeter($1::GEOMETRY)", polygon_bytes).as(Float64)
+  polygon_perimeter # => 114.35571426165451
+end
+```
+
+Please note the casting to `GEOMETRY` within PostGIS functions. Data is sent as `BYTEA`, and I've found that some functions accept the binary as is, while others expect a `GEOMETRY` datatype. I suggest to always cast.
+Unfortunately, and as far as I'm aware, in `crystal-pg` at the moment there is no support for custom types with dynamic OIDs such as those in PostGIS, hence the above casting seems unavoidable.
+
 ## Contributing
 
 1. Fork it (<https://github.com/your-github-user/crystal-wkb/fork>)
