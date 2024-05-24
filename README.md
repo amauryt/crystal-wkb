@@ -383,13 +383,16 @@ Given that the extension is optional, you could also implement your own (Geo)JSO
 
 ## Geometries on a Database
 
-This library can be used to communicate with any system that implements WKB, including many database engines. Below is a full example of using it to receive and transmit geometry data from and to PostGIS using [crystal-pg](https://github.com/will/crystal-pg), the Postgres driver for [crystal-db](https://github.com/crystal-lang/crystal-db).
+This library can be used to communicate with any system that implements WKB, including many database engines. In that case, you can either work at the bytes level doing the conversion yourself, or use  converters for `WKB::Object` and all its descendants for easier reading with `DB::Serializable` from `crystal-db`.
+
+Below is a full example of using it to receive and transmit geometry data from and to PostGIS using [crystal-pg](https://github.com/will/crystal-pg), the Postgres driver for [crystal-db](https://github.com/crystal-lang/crystal-db).
 
 ```crystal
 require "db"
 require "pg"
 require "wkb"
-require "wkb/geojson" # Needed for GeoJSON support
+require "wkb/geojson" # For GeoJSON support
+require "wkb/db" # For `DB::Serializable` support. Must be loaded after "db"!
 
 decoder = WKB::BinDecoder.new
 encoder = WKB::BinEncoder.new(WKB::Flavor::Ext) # or `ExtSRID` if you use SRID
@@ -409,6 +412,15 @@ polygon_json = <<-JSON
   }
 JSON
 
+class Place
+  include DB::Serializable
+
+  property name : String
+
+  @[DB::Field(converter: WKB::DB::PointConverter)]
+  property location : WKB::Point
+end
+
 DB.open("postgres://user:password@host:port/db_name") do |db|
   point_bytes = db.scalar("SELECT 'POINT(1 2 3)'::GEOMETRY;").as(Bytes)
   point = decoder.decode(point_bytes).as(WKB::Point)
@@ -424,6 +436,10 @@ DB.open("postgres://user:password@host:port/db_name") do |db|
   polygon_bytes = encoder.encode(polygon)
   polygon_perimeter = db.scalar("SELECT ST_Perimeter($1::GEOMETRY)", polygon_bytes).as(Float64)
   polygon_perimeter # => 114.35571426165451
+
+  query_str = "SELECT 'Neverland' AS name, 'POINT(1 2)'::GEOMETRY AS location"
+  places = Place.from_rs(db.query(query_str))
+  places.first.location.x # => 1.0
 end
 ```
 
