@@ -1,0 +1,9 @@
+name: wkb
+version: 0.1.0
+
+authors:
+  - Amaury Trujillo <2842742+amauryt@users.noreply.github.com>
+
+crystal: '>= 1.12.1'
+
+license: MIT
