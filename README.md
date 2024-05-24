@@ -1,5 +1,9 @@
 # Well-Known Binary in Crystal
 
+[![Crystal CI](https://github.com/amauryt/crystal-wkb/actions/workflows/crystal.yml/badge.svg)](https://github.com/amauryt/crystal-wkb/actions/workflows/crystal.yml)
+[![Docs](https://img.shields.io/badge/docs-available-brightgreen.svg)](https://amauryt.github.io/crystal-wkb/)
+[![License](https://img.shields.io/github/license/amauryt/crystal-wkb.svg)](https://github.com/amauryt/crystal-wkb/blob/master/LICENSE)
+
 Crystal library for decoding and encoding the well-known binary (WKB) representation of geometry objects, with limited support for well-known text (WKT) and GeoJSON.
 
 This library supports the following variations of WKB used for storage of [simple features](https://en.wikipedia.org/wiki/Simple_Features) geometry:
