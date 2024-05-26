@@ -231,6 +231,21 @@ bytes = iso_encoder.encode(point3D)
 bytes.hexstring # => "01e9030000000000000000f03f00000000000000400000000000000840"
 ```
 
+If you want to support encoding the SRID in EWKB only when needed, i.e., with a non-zero value, you'll need two encoders.
+
+```crystal
+ext_encoder = WKB::BinEncoder.new(WKB::Flavor::Ext)
+ext_srid_encoder = WKB::BinEncoder.new(WKB::Flavor::ExtSRID)
+
+def encode_ewkb_with_optional_srid(object : WKB::Object) : Bytes
+  if object.srid.zero?
+    ext_encoder.encode(object)
+  else
+    ext_srid_encoder.encode(object)
+  end
+end
+```
+
 To decode a `WKB::Object`, create an instance of `WKB::BinDecoder`; it automatically decodes all supported flavors and both byte formats, and you can set a default SRID. You can decode from `Bytes`, from an `IO` instance, or from a `String` hexadecimal representation of the binary geometry object.
 
 If you need to work with a specific type of `WKB::Object` you can: (1) use the `#is_a?` pseudo-method for safe use within an _if block_; (2) cast the object, optionally using the object's `#kind` method to check before casting.
@@ -272,7 +287,7 @@ decoder.decode(point_wkb_str).srid # => 4326
 
 WKT is a commonly-used and human-readable representation of geometry objects. This library's support for encoding and decoding WKT is limited, however. In particular, there is no float precision control on encoding, and decoding 3D and 4D geometries in EWKT (used by PostGIS) is not supported, but the respective encoding in EWKT is supported. ISO WKT is better supported.
 
-To encode WKT, create an instance of `WKB::TextEncoder`, which has a flavor (defaults to Standard WKT). You can encode to a `String` or into an `IO` instance.
+To encode WKT, create an instance of `WKB::TextEncoder`, which has a flavor (defaults to Standard WKT). You can encode to a `String` or into an `IO` instance. For optional SRID encoding in EWKT adapt the example for WKB.
 
 ```crystal
 encoder = WKB::TextEncoder.new
@@ -569,7 +584,7 @@ class Place < BaseModel
 end
 ```
 
-You can further customize your extensions to support only specific types or other encodings, such as including the SRID.
+You can further customize your extension(s) to support only specific types or other encodings, such as including the SRID or making it optional.
 
 ## Contributing
 
