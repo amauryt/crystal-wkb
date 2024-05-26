@@ -385,7 +385,7 @@ Given that the extension is optional, you could also implement your own (Geo)JSO
 
 This library can be used to communicate with any system that implements WKB, including many database engines. In that case, you can either work at the bytes level doing the conversion yourself, or use  converters for `WKB::Object` and all its descendants for easier reading with `DB::Serializable` from `crystal-db`.
 
-Below is a full example of using it to receive and transmit geometry data from and to PostGIS using [crystal-pg](https://github.com/will/crystal-pg), the Postgres driver for [crystal-db](https://github.com/crystal-lang/crystal-db).
+Below is a full example to receive and transmit geometry data from and to PostGIS using [crystal-pg](https://github.com/will/crystal-pg), the Postgres driver for [crystal-db](https://github.com/crystal-lang/crystal-db).
 
 ```crystal
 require "db"
@@ -445,6 +445,131 @@ end
 
 Please note the casting to `GEOMETRY` within PostGIS functions. Data is sent as `BYTEA`, and I've found that some functions accept the binary as is, while others expect a `GEOMETRY` datatype. I suggest to always cast.
 Unfortunately, and as far as I'm aware, in `crystal-pg` at the moment there is no support for custom types with dynamic OIDs such as those in PostGIS, hence the above casting seems unavoidable.
+
+### Use with ORMs
+
+Perhaps the ORM or framework of your choice supports creating custom fields when working with a database. This is the case of [Marten](https://martenframework.com/) with its [custom model fields](https://martenframework.com/docs/models-and-databases/how-to/create-custom-model-fields) and [Lucky](https://luckyframework.org/) via the non-documented extensions for [Avram](https://github.com/luckyframework/avram).
+
+#### Lucky's Avram
+
+Below just an example of creating an extension for Lucky's Avram to work with PostGIS. In this case we only support the generic `WKB::Object`, but you can be more specific if desired.
+
+```crystal
+abstract struct WKB::Object
+  def self.adapter
+    Lucky
+  end
+
+  module Lucky
+    @@bin_decoder = WKB::BinDecoder.new
+    @@bin_encoder = WKB::BinEncoder.new(WKB::Flavor::Ext)
+    # The following is optional, needed if we want to support parsing WKT
+    #   in this column type, for instance entered manually in form fields.
+    @@text_decoder = WKB::TextDecoder.new
+
+    alias ColumnType = Bytes # The base type of `WKB::Object` for our Postgres driver
+    include Avram::Type
+
+    def self.criteria(query : T, column) forall T
+      Criteria(T, Bytes).new(query, column)
+    end
+
+    def from_db!(value : Bytes)
+      @@bin_decoder.decode(value)
+    end
+
+    def parse(value : WKB::Object)
+      SuccessfulCast(WKB::Object).new(value)
+    end
+
+    def parse(value : Bytes)
+      object = @@bin_decoder.decode(value)
+      SuccessfulCast(WKB::Object).new(object)
+    rescue
+      FailedCast.new
+    end
+
+    def parse(value : String)
+      object = @@text_decoder.decode(value).as(WKB::Object)
+      SuccessfulCast(WKB::Object).new(object)
+    rescue
+      FailedCast.new
+    end
+
+    def to_db(value : WKB::Object)
+      @@bin_encoder.encode(value)
+    end
+
+    class Criteria(T, V) < Avram::Criteria(T, V)
+    end
+  end
+end
+
+# The following is needed to add support for `WKB::Object` in migrations
+module Avram::Migrator::Columns
+  module WKB
+    class ObjectColumn(T) < Base
+      @default : T | Nil = nil
+
+      def initialize(@name, @nilable, @default)
+      end
+
+      # The datatype "geometry is encoded as EWKB and it's the most used datatype in PostGIS.
+      #   Another possible value is "geography", useful when working on a global scale.
+      #   See: https://postgis.net/workshops/postgis-intro/geography.html
+      def column_type : String
+        "geometry" 
+      end
+    end
+  end
+end
+```
+
+Remember to load your extension where appropriate in your Lucky's `app.cr`. For instance, you could create a folder `src/charms` to gather all Avram extensions and require it after your shards and before your models, like so:
+
+```crystal
+require "./shards"
+
+require "../config/server"
+require "./app_database"
+require "../config/**"
+require "./charms/**" # Our WKB extension for Avram's lucky is within this folder
+require "./models/base_model"
+# Rest of "require"
+```
+
+Now you can create migrations like this one:
+
+```crystal
+class CreatePlace::V00000000000001 < Avram::Migrator::Migration::V1
+  def migrate
+    create table_for(Place) do
+      primary_key id : Int64
+      add_timestamps
+      add name : String
+      add location : WKB::Object # We can use `WKB::Object` for datatype "geometry"
+    end
+  end
+
+  def rollback
+    drop table_for(Place)
+  end
+end
+```
+
+For the respective model:
+
+```crystal
+class Place < BaseModel
+  # columns for primary key and timestamps are already included by default
+  table do
+    column name : String
+    column location : WKB::Object
+  end
+end
+```
+
+You can further customize your extensions to support only specific types or other encodings, such as including the SRID.
 
 ## Contributing
 
