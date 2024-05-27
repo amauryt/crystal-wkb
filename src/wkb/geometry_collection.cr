@@ -3,8 +3,6 @@ require "./object"
 module WKB
   struct GeometryCollection < Object
     getter geometries : Array(Geometry)
-    delegate :empty?, to: @geometries
-    delegate :size, to: @geometries
 
     def initialize(@geometries : Array(Geometry), @mode = Mode::XY, @srid = 0)
       unless @geometries.empty?
@@ -16,6 +14,14 @@ module WKB
 
     def children
       @geometries
+    end
+
+    def size
+      @geometries.size
+    end
+
+    def empty?
+      @geometries.empty?
     end
   end
 end

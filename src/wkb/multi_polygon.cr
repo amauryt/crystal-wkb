@@ -3,8 +3,6 @@ require "./polygon"
 module WKB
   struct MultiPolygon < Geometry
     getter polygons : Array(Polygon)
-    delegate :empty?, to: @polygons
-    delegate :size, to: @polygons
 
     protected def initialize(@polygons : Array(Polygon), @mode, @srid)
     end
@@ -16,6 +14,14 @@ module WKB
 
     def children
       @polygons
+    end
+
+    def size
+      @polygons.size
+    end
+
+    def empty?
+      @polygons.empty?
     end
 
     def to_coordinates : Array(Array(Array(Array(Float64))))

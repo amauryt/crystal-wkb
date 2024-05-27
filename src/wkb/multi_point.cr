@@ -3,8 +3,6 @@ require "./point"
 module WKB
   struct MultiPoint < Geometry
     getter points : Array(Point)
-    delegate :empty?, to: @points
-    delegate :size, to: @points
 
     protected def initialize(@points : Array(Point), @mode, @srid)
     end
@@ -22,6 +20,14 @@ module WKB
 
     def children
       @points
+    end
+
+    def size
+      @points.size
+    end
+
+    def empty?
+      @points.empty?
     end
 
     def to_coordinates : Array(Array(Float64))

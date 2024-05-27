@@ -2,6 +2,7 @@ require "./mode"
 require "./flavor"
 
 module WKB
+  # Binary encoder of well-known representations of geometry objects (WKB).
   class BinEncoder
     private macro write_coordinate_slice
       slice.each { |coordinate| io.write_bytes(coordinate, @format) }

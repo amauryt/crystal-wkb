@@ -4,8 +4,6 @@ require "./line_string"
 module WKB
   module LineStringSequenceable
     getter line_strings : Array(LineString)
-    delegate :empty?, to: @line_strings
-    delegate :size, to: @line_strings
 
     protected def initialize(@line_strings : Array(LineString), @mode, @srid)
       validate_initialization
@@ -24,6 +22,14 @@ module WKB
 
     def children
       @line_strings
+    end
+
+    def size
+      @line_strings.size
+    end
+
+    def empty?
+      @line_strings.empty?
     end
 
     def to_coordinates : Array(Array(Array(Float64)))

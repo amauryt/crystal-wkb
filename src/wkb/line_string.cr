@@ -5,7 +5,7 @@ module WKB
     include Indexable(Position)
 
     getter positions : Array(Position)
-    delegate :size, to: @positions
+    # :nodoc:
     delegate :unsafe_fetch, to: @positions
 
     protected def initialize(@positions : Array(Position), @mode, @srid)
@@ -30,18 +30,29 @@ module WKB
       @positions
     end
 
+    def size
+      @positions.size
+    end
+
+    def empty?
+      @positions.empty?
+    end
+
     def to_coordinates : Array(Array(Float64))
       @positions.map(&.to_a)
     end
 
+    # Returns `true` if empty or the first child position is equal to the last one.
     def closed?
       @positions.empty? || @positions.first == @positions.last
     end
 
+    # Returns the opposite of `#closed?`.
     def open?
       !closed?
     end
 
+    # Returns `true` if there are at least four positions and they are `#closed?`.
     def ring?
       @positions.size >= 4 && @positions.first == @positions.last
     end

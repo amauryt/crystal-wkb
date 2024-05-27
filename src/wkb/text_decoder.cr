@@ -3,6 +3,12 @@ require "./flavor"
 require "./mode"
 
 module WKB
+  # Textual decoder of well-known representations of geometry objects (WKT).
+  #
+  # WARNING: Decoding of EWKT with 3D and 4D coordinates is not supported.
+  #
+  # NOTE: All `#decode` metods raise  a `WKB::Error` if there was a
+  # decoding error or if the geometry object is not valid.
   class TextDecoder
     getter default_srid : Int32
     @mutex = Mutex.new

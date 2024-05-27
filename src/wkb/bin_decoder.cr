@@ -1,6 +1,12 @@
 require "./mode"
 
 module WKB
+  # Binary decoder of well-known representations of geometry objects (WKB).
+  #
+  # Decoding of all supported flavors is automatic.
+  #
+  # NOTE: All `#decode` metods raise  a `WKB::Error` if there was a
+  # decoding error, and IO error, or if the geometry object is not valid.
   class BinDecoder
     @io = IO::Memory.new(0)
     @mutex = Mutex.new

@@ -2,6 +2,7 @@ require "./flavor"
 require "./mode"
 
 module WKB
+  # Textual encoder of well-known representations of geometry objects.
   class TextEncoder
     getter flavor : Flavor
 

@@ -14,12 +14,14 @@ module WKB
   end
 
   struct Position
+    # NOTE: It's necessary to require the GeoJSON extension after loading the library.
     def self.new(pull : JSON::PullParser)
       coordinates = Array(Float64).new(pull)
       mode = WKB.mode_from_json_coord_elements(coordinates, pull)
       Position.new(coordinates, mode)
     end
 
+    # NOTE: It's necessary to require the GeoJSON extension after loading the library.
     def to_json(builder : JSON::Builder)
       builder.array do
         slice.each { |f| builder.number f }
@@ -28,8 +30,10 @@ module WKB
   end
 
   abstract struct Object
+    # NOTE: It's necessary to require the GeoJSON extension after loading the library.
     abstract def to_json(builder : JSON::Builder)
 
+    # NOTE: It's necessary to require the GeoJSON extension after loading the library.
     def self.new(pull : JSON::PullParser)
       # NOTE: if the first coordinates element is empty and the second not and the latter is XYZ it will raise an error
       pull.read_begin_object
@@ -82,6 +86,7 @@ module WKB
   end
 
   abstract struct Geometry
+    # NOTE: It's necessary to require the GeoJSON extension after loading the library.
     def to_json(builder : JSON::Builder) : Nil
       builder.object do
         builder.string "type"
@@ -125,6 +130,7 @@ module WKB
   end
 
   struct GeometryCollection
+    # NOTE: It's necessary to require the GeoJSON extension after loading the library.
     def to_json(builder : JSON::Builder) : Nil
       builder.object do
         builder.string "type"
@@ -137,6 +143,7 @@ module WKB
 
   {% for klass in %w[Point LineString Polygon MultiPoint MultiLineString MultiPolygon Geometry GeometryCollection] %}
     struct {{klass.id}}
+      # NOTE: It's necessary to require the GeoJSON extension after loading the library.
       def self.new(pull : JSON::PullParser)
         Object.new(pull).as({{klass.id}})
       end
