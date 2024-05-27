@@ -105,4 +105,20 @@ describe WKB::Point do
       array.should eq(coordinates)
     end
   end
+
+  describe "#children" do
+    it "returns an array with the point's position" do
+      point = WKB::Point.new([1.0, 2.0])
+      children = point.children
+      children.size.should eq(1)
+      children.first.should eq(point.position)
+    end
+
+    it "returns an empty array when the point is empty" do
+      point = WKB::Point.new([] of Float64)
+      children = point.children
+      children.size.should eq(0)
+      children.should eq([] of WKB::Position)
+    end
+  end
 end

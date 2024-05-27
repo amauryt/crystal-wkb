@@ -20,7 +20,7 @@ module WKB
     end
 
     def children
-      [@position]
+      @position.empty? ? [] of Position : [@position]
     end
 
     def size
