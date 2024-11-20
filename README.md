@@ -477,10 +477,9 @@ abstract struct WKB::Object
 
   module Lucky
     @@bin_decoder = WKB::BinDecoder.new
-    @@bin_encoder = WKB::BinEncoder.new(WKB::Flavor::Ext)
-    # The following is optional, needed if we want to support parsing WKT
-    #   in this column type, for instance entered manually in form fields.
+    @@bin_encoder = WKB::BinEncoder.new
     @@text_decoder = WKB::TextDecoder.new
+    @@text_encoder = WKB::TextEncoder.new
 
     alias ColumnType = Bytes # The base type of `WKB::Object` for our Postgres driver
     include Avram::Type
@@ -512,7 +511,7 @@ abstract struct WKB::Object
     end
 
     def to_db(value : WKB::Object)
-      @@bin_encoder.encode(value)
+      @@text_encoder.encode(value)
     end
 
     class Criteria(T, V) < Avram::Criteria(T, V)
@@ -585,6 +584,30 @@ end
 ```
 
 You can further customize your extension(s) to support only specific types or other encodings, such as including the SRID or making it optional.
+
+For instance, to only support `WKB::Point` you would need to cast as necessary while parsing `Bytes` or `String` in the respective `Lucky` module:
+
+```crystal
+  def parse(value : Bytes)
+    object = @@bin_decoder.decode(value)
+    if object.kind.point?
+      SuccessfulCast(WKB::Point).new(object.as(WKB::Point))
+    else
+      raise "Not a valid Point"
+    end
+  rescue
+    FailedCast.new
+  end
+```
+
+Remember to also adapt as necessary the column type for Avram migrations:
+
+```crystal
+  def column_type : String
+    # Accept only Points with default PostGIS SRID set 4326, the same as GeoJSON.
+    "geometry(point, 4326)" 
+  end
+```
 
 ## Contributing
 
