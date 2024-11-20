@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Crystal Docs 1.13.3">
+<meta name="crystal_docs.project_version" content="0.1.0">
+<meta name="crystal_docs.project_name" content="wkb">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="wkb">
+  <title>WKB::MultiPoint - wkb 0.1.0</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill="currentColor" fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<input type="checkbox" id="sidebar-btn">
+<label for="sidebar-btn" id="sidebar-btn-label">
+  <svg class="open" xmlns="http://www.w3.org/2000/svg" height="2em" width="2em" viewBox="0 0 512 512"><title>Open Sidebar</title><path fill="currentColor" d="M80 96v64h352V96H80zm0 112v64h352v-64H80zm0 112v64h352v-64H80z"></path></svg>
+  <svg class="close" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><title>Close Sidebar</title><path fill="currentColor" d="m118.6 73.4-45.2 45.2L210.7 256 73.4 393.4l45.2 45.2L256 301.3l137.4 137.3 45.2-45.2L301.3 256l137.3-137.4-45.2-45.2L256 210.7Z"></path></svg>
+</label>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          wkb
+        </a>
+      </h1>
+
+      <span class="project-version">
+        0.1.0
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="wkb/WKB" data-name="wkb">
+      <a href="../WKB.html">WKB</a>
+      
+        <ul>
+  
+  <li class=" " data-id="wkb/WKB/BinDecoder" data-name="wkb::bindecoder">
+      <a href="../WKB/BinDecoder.html">BinDecoder</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/BinEncoder" data-name="wkb::binencoder">
+      <a href="../WKB/BinEncoder.html">BinEncoder</a>
+      
+    </li>
+  
+  <li class="parent " data-id="wkb/WKB/DB" data-name="wkb::db">
+      <a href="../WKB/DB.html">DB</a>
+      
+        <ul>
+  
+  <li class=" " data-id="wkb/WKB/DB/GeometryCollectionConverter" data-name="wkb::db::geometrycollectionconverter">
+      <a href="../WKB/DB/GeometryCollectionConverter.html">GeometryCollectionConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/DB/GeometryConverter" data-name="wkb::db::geometryconverter">
+      <a href="../WKB/DB/GeometryConverter.html">GeometryConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/DB/LineStringConverter" data-name="wkb::db::linestringconverter">
+      <a href="../WKB/DB/LineStringConverter.html">LineStringConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/DB/MultiLineStringConverter" data-name="wkb::db::multilinestringconverter">
+      <a href="../WKB/DB/MultiLineStringConverter.html">MultiLineStringConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/DB/MultiPointConverter" data-name="wkb::db::multipointconverter">
+      <a href="../WKB/DB/MultiPointConverter.html">MultiPointConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/DB/MultiPolygonConverter" data-name="wkb::db::multipolygonconverter">
+      <a href="../WKB/DB/MultiPolygonConverter.html">MultiPolygonConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/DB/ObjectConverter" data-name="wkb::db::objectconverter">
+      <a href="../WKB/DB/ObjectConverter.html">ObjectConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/DB/PointConverter" data-name="wkb::db::pointconverter">
+      <a href="../WKB/DB/PointConverter.html">PointConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/DB/PolygonConverter" data-name="wkb::db::polygonconverter">
+      <a href="../WKB/DB/PolygonConverter.html">PolygonConverter</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/DecodeError" data-name="wkb::decodeerror">
+      <a href="../WKB/DecodeError.html">DecodeError</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/EncodeError" data-name="wkb::encodeerror">
+      <a href="../WKB/EncodeError.html">EncodeError</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/Error" data-name="wkb::error">
+      <a href="../WKB/Error.html">Error</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/Flavor" data-name="wkb::flavor">
+      <a href="../WKB/Flavor.html">Flavor</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/Geometry" data-name="wkb::geometry">
+      <a href="../WKB/Geometry.html">Geometry</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/GeometryCollection" data-name="wkb::geometrycollection">
+      <a href="../WKB/GeometryCollection.html">GeometryCollection</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/LineString" data-name="wkb::linestring">
+      <a href="../WKB/LineString.html">LineString</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/LineStringSequenceable" data-name="wkb::linestringsequenceable">
+      <a href="../WKB/LineStringSequenceable.html">LineStringSequenceable</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/Mode" data-name="wkb::mode">
+      <a href="../WKB/Mode.html">Mode</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/MultiLineString" data-name="wkb::multilinestring">
+      <a href="../WKB/MultiLineString.html">MultiLineString</a>
+      
+    </li>
+  
+  <li class=" current" data-id="wkb/WKB/MultiPoint" data-name="wkb::multipoint">
+      <a href="../WKB/MultiPoint.html">MultiPoint</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/MultiPolygon" data-name="wkb::multipolygon">
+      <a href="../WKB/MultiPolygon.html">MultiPolygon</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/Object" data-name="wkb::object">
+      <a href="../WKB/Object.html">Object</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/ObjectKind" data-name="wkb::objectkind">
+      <a href="../WKB/ObjectKind.html">ObjectKind</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/Point" data-name="wkb::point">
+      <a href="../WKB/Point.html">Point</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/Polygon" data-name="wkb::polygon">
+      <a href="../WKB/Polygon.html">Polygon</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/Position" data-name="wkb::position">
+      <a href="../WKB/Position.html">Position</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/TextDecoder" data-name="wkb::textdecoder">
+      <a href="../WKB/TextDecoder.html">TextDecoder</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/TextEncoder" data-name="wkb::textencoder">
+      <a href="../WKB/TextEncoder.html">TextEncoder</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">struct</span> WKB::<wbr>MultiPoint
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../WKB/MultiPoint.html">WKB::MultiPoint</a></li><li class="superclass"><a href="../WKB/Geometry.html">WKB::Geometry</a></li><li class="superclass"><a href="../WKB/Object.html">WKB::Object</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      wkb/geojson.cr
+    
+    <br/>
+  
+    
+      wkb/multi_point.cr
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28point_array%3AArray%28Array%28Float64%29%29%2Cmode%3DMode%3A%3AXY%2Csrid%3D0%29-class-method" class="signature"><strong>.new</strong>(point_array : Array(Array(Float64)), mode = <span class="t">Mode</span><span class="t">::</span><span class="t">XY</span>, srid = <span class="n">0</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
+        
+          <div class="summary"><p><span class="flag purple">NOTE</span>  It's necessary to require the GeoJSON extension after loading the library.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#children%3AArray%28WKB%3A%3APoint%29-instance-method" class="signature"><strong>#children</strong> : Array(WKB::Point)</a>
+        
+          <div class="summary"><p>Returns the object's child entities as an array.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#empty%3F-instance-method" class="signature"><strong>#empty?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if the object has no children.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#kind%3AObjectKind-instance-method" class="signature"><strong>#kind</strong> : ObjectKind</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#points%3AArray%28Point%29-instance-method" class="signature"><strong>#points</strong> : Array(Point)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#size-instance-method" class="signature"><strong>#size</strong></a>
+        
+          <div class="summary"><p>Returns the size of the object's children.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_coordinates%3AArray%28Array%28Float64%29%29-instance-method" class="signature"><strong>#to_coordinates</strong> : Array(Array(Float64))</a>
+        
+          <div class="summary"><p>Returns a representation of coordinates as a nested array.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+<div class="methods-inherited">
+  
+    
+
+  <h3>Instance methods inherited from struct <code><a href="../WKB/Geometry.html">WKB::Geometry</a></code></h3>
+  
+  
+    <a href="../WKB/Geometry.html#to_coordinates-instance-method" class="tooltip">
+      <span>to_coordinates</span>
+    to_coordinates</a>, 
+    
+  
+    <a href="../WKB/Geometry.html#to_json%28builder%3AJSON%3A%3ABuilder%29%3ANil-instance-method" class="tooltip">
+      <span>to_json(builder : JSON::Builder) : Nil</span>
+    to_json</a>
+    
+  
+
+
+    
+
+  <h3>Constructor methods inherited from struct <code><a href="../WKB/Geometry.html">WKB::Geometry</a></code></h3>
+  
+  
+    <a href="../WKB/Geometry.html#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="tooltip">
+      <span>new(pull : JSON::PullParser)</span>
+    new</a>
+    
+  
+
+
+    
+
+
+    
+
+
+  
+    
+
+  <h3>Instance methods inherited from struct <code><a href="../WKB/Object.html">WKB::Object</a></code></h3>
+  
+  
+    <a href="../WKB/Object.html#children-instance-method" class="tooltip">
+      <span>children</span>
+    children</a>, 
+    
+  
+    <a href="../WKB/Object.html#empty%3F-instance-method" class="tooltip">
+      <span>empty?</span>
+    empty?</a>, 
+    
+  
+    <a href="../WKB/Object.html#has_m%3F-instance-method" class="tooltip">
+      <span>has_m?</span>
+    has_m?</a>, 
+    
+  
+    <a href="../WKB/Object.html#has_z%3F-instance-method" class="tooltip">
+      <span>has_z?</span>
+    has_z?</a>, 
+    
+  
+    <a href="../WKB/Object.html#has_zm%3F-instance-method" class="tooltip">
+      <span>has_zm?</span>
+    has_zm?</a>, 
+    
+  
+    <a href="../WKB/Object.html#mode%3AWKB%3A%3AMode-instance-method" class="tooltip">
+      <span>mode : WKB::Mode</span>
+    mode</a>, 
+    
+  
+    <a href="../WKB/Object.html#size-instance-method" class="tooltip">
+      <span>size</span>
+    size</a>, 
+    
+  
+    <a href="../WKB/Object.html#srid%3AInt32-instance-method" class="tooltip">
+      <span>srid : Int32</span>
+    srid</a>, 
+    
+  
+    <a href="../WKB/Object.html#to_json%28builder%3AJSON%3A%3ABuilder%29-instance-method" class="tooltip">
+      <span>to_json(builder : JSON::Builder)</span>
+    to_json</a>
+    
+  
+
+
+    
+
+  <h3>Constructor methods inherited from struct <code><a href="../WKB/Object.html">WKB::Object</a></code></h3>
+  
+  
+    <a href="../WKB/Object.html#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="tooltip">
+      <span>new(pull : JSON::PullParser)</span>
+    new</a>
+    
+  
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(point_array:Array(Array(Float64)),mode=Mode::XY,srid=0)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(point_array : Array(Array(Float64)), mode = <span class="t">Mode</span><span class="t">::</span><span class="t">XY</span>, srid = <span class="n">0</span>)
+
+        <a class="method-permalink" href="#new%28point_array%3AArray%28Array%28Float64%29%29%2Cmode%3DMode%3A%3AXY%2Csrid%3D0%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(pull:JSON::PullParser)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(pull : JSON::PullParser)
+
+        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p><span class="flag purple">NOTE</span>  It's necessary to require the GeoJSON extension after loading the library.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="children:Array(WKB::Point)-instance-method">
+      <div class="signature">
+        
+        def <strong>children</strong> : Array(<a href="../WKB/Point.html">WKB::Point</a>)
+
+        <a class="method-permalink" href="#children%3AArray%28WKB%3A%3APoint%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+            <div class="doc-inherited">
+              Description copied from struct <a href="../WKB/Object.html">WKB::Object</a>
+            </div>
+          
+          <p>Returns the object's child entities as an array.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="empty?-instance-method">
+      <div class="signature">
+        
+        def <strong>empty?</strong>
+
+        <a class="method-permalink" href="#empty%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+            <div class="doc-inherited">
+              Description copied from struct <a href="../WKB/Object.html">WKB::Object</a>
+            </div>
+          
+          <p>Returns <code>true</code> if the object has no children.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="kind:ObjectKind-instance-method">
+      <div class="signature">
+        
+        def <strong>kind</strong> : <a href="../WKB/ObjectKind.html">ObjectKind</a>
+
+        <a class="method-permalink" href="#kind%3AObjectKind-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="points:Array(Point)-instance-method">
+      <div class="signature">
+        
+        def <strong>points</strong> : Array(<a href="../WKB/Point.html">Point</a>)
+
+        <a class="method-permalink" href="#points%3AArray%28Point%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="size-instance-method">
+      <div class="signature">
+        
+        def <strong>size</strong>
+
+        <a class="method-permalink" href="#size-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+            <div class="doc-inherited">
+              Description copied from struct <a href="../WKB/Object.html">WKB::Object</a>
+            </div>
+          
+          <p>Returns the size of the object's children.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_coordinates:Array(Array(Float64))-instance-method">
+      <div class="signature">
+        
+        def <strong>to_coordinates</strong> : Array(Array(Float64))
+
+        <a class="method-permalink" href="#to_coordinates%3AArray%28Array%28Float64%29%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+            <div class="doc-inherited">
+              Description copied from struct <a href="../WKB/Geometry.html">WKB::Geometry</a>
+            </div>
+          
+          <p>Returns a representation of coordinates as a nested array.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+</div>
+
+</body>
+</html>

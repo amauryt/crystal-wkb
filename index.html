@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Crystal Docs 1.13.3">
+<meta name="crystal_docs.project_version" content="0.1.0">
+<meta name="crystal_docs.project_name" content="wkb">
+
+
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/doc.js"></script>
+
+  <meta name="repository-name" content="wkb">
+  <title>wkb 0.1.0</title>
+  <script type="text/javascript">
+  CrystalDocs.base_path = "";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill="currentColor" fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<input type="checkbox" id="sidebar-btn">
+<label for="sidebar-btn" id="sidebar-btn-label">
+  <svg class="open" xmlns="http://www.w3.org/2000/svg" height="2em" width="2em" viewBox="0 0 512 512"><title>Open Sidebar</title><path fill="currentColor" d="M80 96v64h352V96H80zm0 112v64h352v-64H80zm0 112v64h352v-64H80z"></path></svg>
+  <svg class="close" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><title>Close Sidebar</title><path fill="currentColor" d="m118.6 73.4-45.2 45.2L210.7 256 73.4 393.4l45.2 45.2L256 301.3l137.4 137.3 45.2-45.2L301.3 256l137.3-137.4-45.2-45.2L256 210.7Z"></path></svg>
+</label>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="index.html">
+          wkb
+        </a>
+      </h1>
+
+      <span class="project-version">
+        0.1.0
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent " data-id="wkb/WKB" data-name="wkb">
+      <a href="WKB.html">WKB</a>
+      
+        <ul>
+  
+  <li class=" " data-id="wkb/WKB/BinDecoder" data-name="wkb::bindecoder">
+      <a href="WKB/BinDecoder.html">BinDecoder</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/BinEncoder" data-name="wkb::binencoder">
+      <a href="WKB/BinEncoder.html">BinEncoder</a>
+      
+    </li>
+  
+  <li class="parent " data-id="wkb/WKB/DB" data-name="wkb::db">
+      <a href="WKB/DB.html">DB</a>
+      
+        <ul>
+  
+  <li class=" " data-id="wkb/WKB/DB/GeometryCollectionConverter" data-name="wkb::db::geometrycollectionconverter">
+      <a href="WKB/DB/GeometryCollectionConverter.html">GeometryCollectionConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/DB/GeometryConverter" data-name="wkb::db::geometryconverter">
+      <a href="WKB/DB/GeometryConverter.html">GeometryConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/DB/LineStringConverter" data-name="wkb::db::linestringconverter">
+      <a href="WKB/DB/LineStringConverter.html">LineStringConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/DB/MultiLineStringConverter" data-name="wkb::db::multilinestringconverter">
+      <a href="WKB/DB/MultiLineStringConverter.html">MultiLineStringConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/DB/MultiPointConverter" data-name="wkb::db::multipointconverter">
+      <a href="WKB/DB/MultiPointConverter.html">MultiPointConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/DB/MultiPolygonConverter" data-name="wkb::db::multipolygonconverter">
+      <a href="WKB/DB/MultiPolygonConverter.html">MultiPolygonConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/DB/ObjectConverter" data-name="wkb::db::objectconverter">
+      <a href="WKB/DB/ObjectConverter.html">ObjectConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/DB/PointConverter" data-name="wkb::db::pointconverter">
+      <a href="WKB/DB/PointConverter.html">PointConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/DB/PolygonConverter" data-name="wkb::db::polygonconverter">
+      <a href="WKB/DB/PolygonConverter.html">PolygonConverter</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/DecodeError" data-name="wkb::decodeerror">
+      <a href="WKB/DecodeError.html">DecodeError</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/EncodeError" data-name="wkb::encodeerror">
+      <a href="WKB/EncodeError.html">EncodeError</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/Error" data-name="wkb::error">
+      <a href="WKB/Error.html">Error</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/Flavor" data-name="wkb::flavor">
+      <a href="WKB/Flavor.html">Flavor</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/Geometry" data-name="wkb::geometry">
+      <a href="WKB/Geometry.html">Geometry</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/GeometryCollection" data-name="wkb::geometrycollection">
+      <a href="WKB/GeometryCollection.html">GeometryCollection</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/LineString" data-name="wkb::linestring">
+      <a href="WKB/LineString.html">LineString</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/LineStringSequenceable" data-name="wkb::linestringsequenceable">
+      <a href="WKB/LineStringSequenceable.html">LineStringSequenceable</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/Mode" data-name="wkb::mode">
+      <a href="WKB/Mode.html">Mode</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/MultiLineString" data-name="wkb::multilinestring">
+      <a href="WKB/MultiLineString.html">MultiLineString</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/MultiPoint" data-name="wkb::multipoint">
+      <a href="WKB/MultiPoint.html">MultiPoint</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/MultiPolygon" data-name="wkb::multipolygon">
+      <a href="WKB/MultiPolygon.html">MultiPolygon</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/Object" data-name="wkb::object">
+      <a href="WKB/Object.html">Object</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/ObjectKind" data-name="wkb::objectkind">
+      <a href="WKB/ObjectKind.html">ObjectKind</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/Point" data-name="wkb::point">
+      <a href="WKB/Point.html">Point</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/Polygon" data-name="wkb::polygon">
+      <a href="WKB/Polygon.html">Polygon</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/Position" data-name="wkb::position">
+      <a href="WKB/Position.html">Position</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/TextDecoder" data-name="wkb::textdecoder">
+      <a href="WKB/TextDecoder.html">TextDecoder</a>
+      
+    </li>
+  
+  <li class=" " data-id="wkb/WKB/TextEncoder" data-name="wkb::textencoder">
+      <a href="WKB/TextEncoder.html">TextEncoder</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1><a id="well-known-binary-in-crystal" class="anchor" href="#well-known-binary-in-crystal">  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Well-Known Binary in Crystal</h1>
+<p><a href="https://github.com/amauryt/crystal-wkb/actions/workflows/crystal.yml"><img src="https://github.com/amauryt/crystal-wkb/actions/workflows/crystal.yml/badge.svg" alt="Crystal CI" /></a>
+<a href="https://amauryt.github.io/crystal-wkb/"><img src="https://img.shields.io/badge/docs-available-brightgreen.svg" alt="Docs" /></a>
+<a href="https://github.com/amauryt/crystal-wkb/blob/master/LICENSE"><img src="https://img.shields.io/github/license/amauryt/crystal-wkb.svg" alt="License" /></a></p>
+<p>Crystal library for decoding and encoding the well-known binary (WKB) representation of geometry objects, with limited support for well-known text (WKT) and GeoJSON.</p>
+<p>This library supports the following variations of WKB used for storage of <a href="https://en.wikipedia.org/wiki/Simple_Features">simple features</a> geometry:</p>
+<ul>
+<li>Standard Well-Known Binary (<a href="https://libgeos.org/specifications/wkb/#standard-wkb">WKB</a>): limited to XY</li>
+<li>Extended Well-Known Binary (<a href="https://libgeos.org/specifications/wkb/#extended-wkb">EWKB</a>) used by <a href="https://postgis.net/">PostGIS</a>: XY, XYZ, XYM, XYZM, with optional SRID</li>
+<li>ISO 13249-3 Well-Known Binary (<a href="https://libgeos.org/specifications/wkb/#iso-wkb">ISO WKB</a>): XY, XYZ, XYM, and XYZM</li>
+</ul>
+<p>Only the following seven geometry objects are supported:</p>
+<ol>
+<li>Point</li>
+<li>LineString</li>
+<li>Polygon</li>
+<li>MultiPoint</li>
+<li>MultiLineString</li>
+<li>MultiPolygon</li>
+<li>GeometryCollection</li>
+</ol>
+<h2><a id="installation" class="anchor" href="#installation">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Installation</h2>
+<ol>
+<li>
+<p>Add the dependency to your <code>shard.yml</code>:</p>
+<pre><code class="language-yaml">dependencies:
+  wkb:
+    github: amauryt/crystal-wkb</code></pre>
+</li>
+<li>
+<p>Run <code>shards install</code></p>
+</li>
+<li>
+<p>Require the library</p>
+</li>
+</ol>
+<pre><code class="language-crystal">  <span class="k">require</span> <span class="s">&quot;wkb&quot;</span></code></pre>
+<h3><a id="coordinate-dimension-mode" class="anchor" href="#coordinate-dimension-mode">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Coordinate Dimension Mode</h3>
+<p>The basic element to describe a geometry object is the <em>coordinate</em>, whose value is always of type <code>Float64</code> in WKB. Coordinates may be 2D (XY), 3D (XYZ, XYM) or 4D (XYZM). The struct <code><a href="WKB/Position.html">WKB::Position</a></code> is a thin wrapper around a <code>Slice(Float64)</code> instance to represent a set of coordinate elements. Each position and geometry object has a <code><a href="WKB/Mode.html">WKB::Mode</a></code> enum to indicate one of the previous coordinate dimensions. This mode attribute is necessary to disambiguate 3D coordinates (which can be XYZ or XYM) in the methods and serialization of a position or geometry object, and it aids in checking the consistency of composite objects. The default mode is <code><a href="WKB/Mode.html#XY">WKB::Mode::XY</a></code>. Independently of their mode, a position and all seven geometry objects could be <em>empty</em>.</p>
+<h3><a id="wkb-flavor" class="anchor" href="#wkb-flavor">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>WKB Flavor</h3>
+<p>Variants of WKB and WKT serialization are referred to as <em>flavors</em>. The library represents these via the enum <code><a href="WKB/Flavor.html">WKB::Flavor</a></code>, with the possible values:</p>
+<ul>
+<li><code>Basic</code>: the default flavor, which follows Standard WKB and is limited to mode <code>XY</code></li>
+<li><code>Ext</code>: for EWKB without SRID, usable with all four modes</li>
+<li><code>ExtSRID</code>: for EWKB with SRID, usable with all four modes</li>
+<li><code>ISO</code>: for ISO WKB, usable with all four modes</li>
+</ul>
+<h2><a id="geometry-structs" class="anchor" href="#geometry-structs">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Geometry Structs</h2>
+<p>Position and geomety objects SHOULD be considered to be immutable structures. All geometry objects can be directly created with (nested) arrays of `Float64, with the exception of geometry collection; see the examples below. In addition, all geometry objects need a mode (defaults to XY) and a SRID (defaults to 0, a value commonly used to signify that there is no SRID).</p>
+<p>The main library's entitiy is the abstract struct <code><a href="WKB/Object.html">WKB::Object</a></code>, which represents one of the seven supported geometry objects. It has two descendants:</p>
+<ul>
+<li><code><a href="WKB/Geometry.html">WKB::Geometry</a></code>, an abstract struct that comprises the first six geometry objects</li>
+<li><code><a href="WKB/GeometryCollection.html">WKB::GeometryCollection</a></code>, a special object to contain heterogeneous <code><a href="WKB/Geometry.html">WKB::Geometry</a></code> objects</li>
+</ul>
+<p>All <code><a href="WKB/Object.html">WKB::Object</a></code> descendants have the following instance methods:</p>
+<ul>
+<li><code>#children</code> for the child elements of the geometry object, with each having a different child type</li>
+<li><code>#size</code> delegated to the object's children</li>
+<li><code>#empty?</code> delegated to the object's children</li>
+<li><code>#mode</code> for the object's coordinate dimension mode</li>
+<li><code>#srid</code> for the object's SRID (spatial reference identifier)</li>
+<li><code>#has_z?</code> to check the object's mode for coordinate Z</li>
+<li><code>#haz_m?</code> to check the object's mode for coordinate M</li>
+<li><code>#haz_zm?</code> to check the object's mode for both Z an M</li>
+<li><code>#kind</code> a convenience enum for the object's type</li>
+</ul>
+<p>All <code><a href="WKB/Geometry.html">WKB::Geometry</a></code> descendants and <code><a href="WKB/Position.html">WKB::Position</a></code> have the method:</p>
+<ul>
+<li><code>#to_coordinates</code> to create a (nested) <code>Float64</code> array with the respective coordinates</li>
+</ul>
+<h3><a id="position" class="anchor" href="#position">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Position</h3>
+<p>The base element to represent coordinates in geometry objects.</p>
+<pre><code class="language-crystal">position2D  <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">Position</span>.new([<span class="n">1.0</span>, <span class="n">2.0</span>]) <span class="c"># defaults to WKB::Mode::XY</span>
+position3Dz <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">Position</span>.new([<span class="n">1.0</span>, <span class="n">2.0</span>, <span class="n">3.0</span>], <span class="t">WKB</span><span class="t">::</span><span class="t">Mode</span><span class="t">::</span><span class="t">XYZ</span>)
+position3Dm <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">Position</span>.new([<span class="n">1.0</span>, <span class="n">2.0</span>, <span class="n">3.0</span>], <span class="t">WKB</span><span class="t">::</span><span class="t">Mode</span><span class="t">::</span><span class="t">XYM</span>)
+position4D  <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">Position</span>.new([<span class="n">1.0</span>, <span class="n">2.0</span>, <span class="n">3.0</span>, <span class="n">4.0</span>], <span class="t">WKB</span><span class="t">::</span><span class="t">Mode</span><span class="t">::</span><span class="t">XYZM</span>)
+position2D.x <span class="c"># =&gt; 1.0</span>
+position2D.has_z? <span class="c"># =&gt; false</span>
+position.z.nan? <span class="c"># =&gt; true</span>
+position4D.has_zm? <span class="c"># =&gt; true</span>
+position4D.m <span class="c"># =&gt; 4.0</span>
+position_empty <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">Point</span>.new(<span class="o">[]</span> <span class="k">of</span> <span class="t">Float64</span>)
+position4D_empty <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">Point</span>.new(<span class="o">[]</span> <span class="k">of</span> <span class="t">Float64</span>, mode: <span class="t">WKB</span><span class="t">::</span><span class="t">Mode</span><span class="t">::</span><span class="t">XYZM</span>)</code></pre>
+<h3><a id="point" class="anchor" href="#point">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Point</h3>
+<p>The simplest of geometry objects. A <code><a href="WKB/Point.html">WKB::Point</a></code> has a single position to which it delegates most of its methods. The creation and properties of a point are similar to that of a position, but it also has a SRID.</p>
+<pre><code class="language-crystal">point2D  <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">Point</span>.new([<span class="n">1.0</span>, <span class="n">2.0</span>])
+point3D <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">Point</span>.new([<span class="n">1.0</span>, <span class="n">2.0</span>, <span class="n">3.0</span>], <span class="t">WKB</span><span class="t">::</span><span class="t">Mode</span><span class="t">::</span><span class="t">XYZ</span>)
+point2D.position <span class="c"># =&gt; WKB::Position(@slice=Slice[1.0, 2.0], @mode=WKB::Mode::XY)</span>
+point2D.srid <span class="c"># =&gt; 0</span>
+point_with_srid <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">Point</span>.new([<span class="n">1.0</span>, <span class="n">2.0</span>], srid: <span class="n">4326</span>)
+point_with_srid.srid <span class="c"># =&gt; 4326 </span></code></pre>
+<p>For consistency with other geometry objects, the method <code>#children</code> returns an array with the point's single position, with the latter being possibly empty. Hence, if not empty, the point's <code>#size</code> will always be 1.</p>
+<h3><a id="line-string" class="anchor" href="#line-string">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>LineString</h3>
+<p>A <code><a href="WKB/LineString.html">WKB::LineString</a></code> has an array of positions as children. However trying to create a <code><a href="WKB/LineString.html">WKB::LineString</a></code> with a single position will raise <code><a href="WKB/Error.html">WKB::Error</a></code>. For convenience, the struct includes <code>Indexable(<a href="WKB/Position.html">WKB::Position</a>)</code>.</p>
+<pre><code class="language-crystal">line_string <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">LineString</span>.new([[<span class="n">1.0</span>, <span class="n">2.0</span>],[<span class="n">3.0</span>, <span class="n">4.0</span>]])
+line_string.positions.first <span class="c"># =&gt; WKB::Position(@slice=Slice[1.0, 2.0], @mode=WKB::Mode::XY)</span>
+line_string.children.first <span class="c"># same</span>
+line_string.first <span class="c"># same</span></code></pre>
+<h3><a id="polygon" class="anchor" href="#polygon">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Polygon</h3>
+<p>A <code><a href="WKB/Polygon.html">WKB::Polygon</a></code> has line strings as children, all of which must be <em>rings</em> if not empty (i.e., have a least four positions, with the first and last ones being the same), otherwise a <code><a href="WKB/Error.html">WKB::Error</a></code> will be raised. If not empty, the first line string is the <em>exterior ring</em>, and the rest are the <em>interior rings</em>.</p>
+<pre><code class="language-crystal">polygon <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">Polygon</span>.new([
+  [
+    [<span class="n">20.0</span>, <span class="n">30.0</span>],
+    [<span class="n">35.0</span>, <span class="n">35.0</span>],
+    [<span class="n">30.0</span>, <span class="n">20.0</span>],
+    [<span class="n">20.0</span>, <span class="n">30.0</span>]
+  ]
+])
+polygon.line_strings.first <span class="c"># =&gt; &lt;WKB::LineString&gt;</span>
+polygon.children.first <span class="c"># same</span>
+polygon.exterior_ring <span class="c">#idem</span>
+polygon.interior_rings <span class="c"># =&gt; [] of WKB::LineString</span></code></pre>
+<h3><a id="multi-point" class="anchor" href="#multi-point">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>MultiPoint</h3>
+<p>A <code><a href="WKB/MultiPoint.html">WKB::MultiPoint</a></code> is a multipart object that has points as children.</p>
+<pre><code class="language-crystal">multi_point <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">MultiPoint</span>.new([
+  [<span class="n">1.0</span>, <span class="n">2.0</span>],
+  [<span class="n">3.0</span>, <span class="n">4.0</span>]
+])
+multi_point.points.first <span class="c"># =&gt; &lt;WKB::Point&gt;</span>
+multi_point.children.first <span class="c"># same</span></code></pre>
+<h3><a id="multi-line-string" class="anchor" href="#multi-line-string">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>MultiLineString</h3>
+<p>A <code><a href="WKB/MultiLineString.html">WKB::MultiLineString</a></code> is a multipart object that has line strings as children.</p>
+<pre><code class="language-crystal">multi_line_string <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">MultiLineString</span>.new([
+  [
+    [<span class="n">20.0</span>, <span class="n">30.0</span>],
+    [<span class="n">35.0</span>, <span class="n">35.0</span>],
+    [<span class="n">30.0</span>, <span class="n">20.0</span>]
+  ]
+])
+multi_line_string.line_strings.first <span class="c"># =&gt; &lt;WKB::LineString&gt;</span>
+multi_line_string.children.first <span class="c"># same</span></code></pre>
+<h3><a id="multi-polygon" class="anchor" href="#multi-polygon">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>MultiPolygon</h3>
+<p>A <code><a href="WKB/Polygon.html">WKB::Polygon</a></code> is a multipart object that has polygons as children.</p>
+<pre><code class="language-crystal">multi_polygon <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">MultiPolygon</span>.new([
+  [
+    [
+      [<span class="n">40.0</span>, <span class="n">40.0</span>],
+      [<span class="n">20.0</span>, <span class="n">45.0</span>],
+      [<span class="n">45.0</span>, <span class="n">30.0</span>],
+      [<span class="n">40.0</span>, <span class="n">40.0</span>]
+    ]
+  ]
+])
+multi_polygon.polygons.first <span class="c"># =&gt; &lt;WKB::Polygon&gt;</span>
+multi_polygon.children.first <span class="c"># same</span></code></pre>
+<h3><a id="geometry-collection" class="anchor" href="#geometry-collection">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>GeometryCollection</h3>
+<p>A <code><a href="WKB/GeometryCollection.html">WKB::GeometryCollection</a></code> is a composite object that has other geometry objects as children. In this library, the children of a geometry collection, if not empty, MUST be heterogenous instances of <code><a href="WKB/Geometry.html">WKB::Geometry</a></code>. If you need to hold a collection of simple homogeneous geometries, use the respective multipart geometry object.</p>
+<pre><code class="language-crystal">point <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">Point</span>.new([<span class="n">1.0</span>, <span class="n">2.0</span>])
+line_string <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">LineString</span>.new([[<span class="n">1.0</span>, <span class="n">2.0</span>],[<span class="n">3.0</span>, <span class="n">4.0</span>]])
+geometry_collection <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">GeometryCollection</span>.new([point, line_string])
+geometry_collection.geometries <span class="c"># =&gt; &lt;Array(WKB::Geometry)&gt;</span>
+geometry_collection.children <span class="c"># same</span></code></pre>
+<h2><a id="serialization" class="anchor" href="#serialization">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Serialization</h2>
+<p>The main scope of this library is to support encoding and decoding in the aforementioned four flavors of WKB. Support for WKT and GeoJSON is limited to simple but inflexible use cases which may or may not fulfill your specific needs.</p>
+<h3><a id="well-known-binary" class="anchor" href="#well-known-binary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Well-Known Binary</h3>
+<p>To encode WKB, create an instance of <code><a href="WKB/BinEncoder.html">WKB::BinEncoder</a></code>, which has a flavor (defaults to Standard WKB) and a byte format (defaults to little endian). Remember that Standard WKB can be used only with XY. You can encode into <code>Bytes</code> or you can also encode directly into an <code>IO</code> instance. Empty points are encoded with coordinates set to <code>Float64::NAN</code>, in line with PostGIS and the GEOS C/C++ library.</p>
+<pre><code class="language-crystal">encoder <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">BinEncoder</span>.new
+encoder.flavor <span class="c"># =&gt; WKB::Flavor::Basic</span>
+encoder.format <span class="c"># =&gt; IO::ByteFormat::LittleEndian</span>
+point2D <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">Point</span>.new([<span class="n">1.0</span>, <span class="n">2.0</span>])
+bytes <span class="o">=</span> encoder.encode(point2D)
+bytes.hexstring <span class="c"># =&gt; &quot;0101000000000000000000f03f0000000000000040&quot;</span>
+point_empty <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">Point</span>.new(<span class="o">[]</span>)
+bytes <span class="o">=</span> encoder.encode(point_empty)
+bytes.hexstring <span class="c"># =&gt; &quot;0101000000000000000000f87f000000000000f87f&quot;</span>
+io <span class="o">=</span> <span class="t">IO</span><span class="t">::</span><span class="t">Memory</span>.new
+encoder.encode(point2D, io)
+
+point3D <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">Point</span>.new([<span class="n">1.0</span>, <span class="n">2.0</span>, <span class="n">3.0</span>], <span class="t">WKB</span><span class="t">::</span><span class="t">Mode</span><span class="t">::</span><span class="t">XYZ</span>)
+ext_encoder <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">BinEncoder</span>.new(<span class="t">WKB</span><span class="t">::</span><span class="t">Flavor</span><span class="t">::</span><span class="t">Ext</span>)
+iso_encoder <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">BinEncoder</span>.new(<span class="t">WKB</span><span class="t">::</span><span class="t">Flavor</span><span class="t">::</span><span class="t">ISO</span>)
+bytes <span class="o">=</span> ext_encoder.encode(point3D)
+bytes.hexstring <span class="c"># =&gt; &quot;0101000080000000000000f03f00000000000000400000000000000840&quot;</span>
+bytes <span class="o">=</span> iso_encoder.encode(point3D)
+bytes.hexstring <span class="c"># =&gt; &quot;01e9030000000000000000f03f00000000000000400000000000000840&quot;</span></code></pre>
+<p>If you want to support encoding the SRID in EWKB only when needed, i.e., with a non-zero value, you'll need two encoders.</p>
+<pre><code class="language-crystal">ext_encoder <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">BinEncoder</span>.new(<span class="t">WKB</span><span class="t">::</span><span class="t">Flavor</span><span class="t">::</span><span class="t">Ext</span>)
+ext_srid_encoder <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">BinEncoder</span>.new(<span class="t">WKB</span><span class="t">::</span><span class="t">Flavor</span><span class="t">::</span><span class="t">ExtSRID</span>)
+
+<span class="k">def</span> <span class="m">encode_ewkb_with_optional_srid</span>(object : <span class="t">WKB</span><span class="t">::</span><span class="t">Object</span>) : <span class="t">Bytes</span>
+  <span class="k">if</span> object.srid.zero?
+    ext_encoder.encode(object)
+  <span class="k">else</span>
+    ext_srid_encoder.encode(object)
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
+<p>To decode a <code><a href="WKB/Object.html">WKB::Object</a></code>, create an instance of <code><a href="WKB/BinDecoder.html">WKB::BinDecoder</a></code>; it automatically decodes all supported flavors and both byte formats, and you can set a default SRID. You can decode from <code>Bytes</code>, from an <code>IO</code> instance, or from a <code>String</code> hexadecimal representation of the binary geometry object.</p>
+<p>If you need to work with a specific type of <code><a href="WKB/Object.html">WKB::Object</a></code> you can: (1) use the <code>#is_a?</code> pseudo-method for safe use within an <em>if block</em>; (2) cast the object, optionally using the object's <code>#kind</code> method to check before casting.</p>
+<pre><code class="language-crystal">decoder <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">BinDecoder</span>.new
+point_wkb_str <span class="o">=</span> <span class="s">&quot;0101000000000000000000f03f0000000000000040&quot;</span>
+object <span class="o">=</span> decoder.decode(point_wkb_str) <span class="c"># =&gt; &lt;WKB::Object+&gt;</span>
+object.empty? <span class="c"># =&gt; false</span>
+
+<span class="c"># Desired type known at compile time, if true it&#39;s safe to use point methods</span>
+<span class="k">if</span> object.<span class="k">is_a?</span>(<span class="t">WKB</span><span class="t">::</span><span class="t">Point</span>) 
+  object.x <span class="c"># =&gt; 1.0</span>
+<span class="k">end</span>
+
+<span class="c"># For more dynamic scenarios we can verify kind and then safely cast</span>
+object.kind.point? <span class="c"># =&gt; true</span>
+point <span class="o">=</span> object.<span class="k">as</span>(<span class="t">WKB</span><span class="t">::</span><span class="t">Point</span>) 
+point.x <span class="c"># =&gt; 1.0</span>
+
+<span class="c"># Sometimes it&#39;s better to use the more generic struct</span>
+object.kind.geometry? <span class="c"># =&gt; true</span>
+geometry <span class="o">=</span> object.<span class="k">as</span>(<span class="t">WKB</span><span class="t">::</span><span class="t">Geometry</span>)
+geometry.to_coordinates <span class="c"># =&gt; [1.0, 2.0] </span>
+
+encoder <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">BinEncoder</span>.new
+io <span class="o">=</span> <span class="t">IO</span><span class="t">::</span><span class="t">Memory</span>.new
+encoder.encode(point, io)
+io.rewind
+another_point <span class="o">=</span> decoder.decode(io).<span class="k">as</span>(<span class="t">WKB</span><span class="t">::</span><span class="t">Point</span>)
+another_point <span class="o">==</span> point <span class="c"># =&gt; true</span>
+
+point.srid <span class="c"># =&gt; 0</span>
+decoder <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">BinDecoder</span>.new(default_srid <span class="o">=</span> <span class="n">4326</span>)
+decoder.decode(point_wkb_str).srid <span class="c"># =&gt; 4326</span></code></pre>
+<h3><a id="well-known-text" class="anchor" href="#well-known-text">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Well-Known Text</h3>
+<p>WKT is a commonly-used and human-readable representation of geometry objects. This library's support for encoding and decoding WKT is limited, however. In particular, there is no float precision control on encoding, and decoding 3D and 4D geometries in EWKT (used by PostGIS) is not supported, but the respective encoding in EWKT is supported. ISO WKT is better supported.</p>
+<p>To encode WKT, create an instance of <code><a href="WKB/TextEncoder.html">WKB::TextEncoder</a></code>, which has a flavor (defaults to Standard WKT). You can encode to a <code>String</code> or into an <code>IO</code> instance. For optional SRID encoding in EWKT adapt the example for WKB.</p>
+<pre><code class="language-crystal">encoder <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">TextEncoder</span>.new
+encoder.flavor <span class="c"># =&gt; WKB::Flavor::Basic</span>
+point2D <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">Point</span>.new([<span class="n">1.0</span>, <span class="n">2.0</span>])
+encoder.encode(point2D) <span class="c"># =&gt; &quot;POINT(1.0 2.0)&quot;</span>
+io <span class="o">=</span> <span class="t">IO</span><span class="t">::</span><span class="t">Memory</span>.new
+encoder.encode(point2D)
+
+point3D <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">Point</span>.new([<span class="n">1.0</span>, <span class="n">2.0</span>, <span class="n">3.0</span>], <span class="t">WKB</span><span class="t">::</span><span class="t">Mode</span><span class="t">::</span><span class="t">XYZ</span>)
+ext_encoder <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">TextEncoder</span>.new(<span class="t">WKB</span><span class="t">::</span><span class="t">Flavor</span><span class="t">::</span><span class="t">Ext</span>)
+ext_srid_encoder <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">TextEncoder</span>.new(<span class="t">WKB</span><span class="t">::</span><span class="t">Flavor</span><span class="t">::</span><span class="t">ExtSRID</span>)
+iso_encoder <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">TextEncoder</span>.new(<span class="t">WKB</span><span class="t">::</span><span class="t">Flavor</span><span class="t">::</span><span class="t">ISO</span>)
+ext_encoder.encode(point3D) <span class="c"># =&gt; &quot;POINT(1.0 2.0 3.0)</span>
+ext_srid_encoder.encode(point3D) <span class="c"># =&gt; &quot;SRID=0;POINT(1.0 2.0 3.0)&quot;</span>
+iso_encoder.encode(point3D) <span class="c"># =&gt; &quot;POINT Z(1.0 2.0 3.0)&quot;</span></code></pre>
+<p>To decode WKT, create an instance of <code><a href="WKB/TextDecoder.html">WKB::TextDecoder</a></code>, for which you can set a default SRID. You can decode only from a <code>String</code> instance. The same casting restrictions as decoding WKB apply.</p>
+<pre><code class="language-crystal">decoder <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">TextDecoder</span>.new
+point_wkt_str <span class="o">=</span> <span class="s">&quot;POINT Z(1.0 2.0 3.0)&quot;</span>
+object <span class="o">=</span> decoder.decode(point_wkt_str) <span class="c"># =&gt; &lt;WKB::Object+&gt;</span>
+object.empty? <span class="c"># =&gt; false</span>
+object.mode.xyz? <span class="c"># =&gt; true</span>
+<span class="k">if</span> object.<span class="k">is_a?</span>(<span class="t">WKB</span><span class="t">::</span><span class="t">Geometry</span>)
+  object.to_coordinates <span class="c"># =&gt; [1.0, 2.0, 3.0]</span>
+<span class="k">end</span>
+object.kind.point? <span class="c"># =&gt; true</span>
+point <span class="o">=</span> object.<span class="k">as</span>(<span class="t">WKB</span><span class="t">::</span><span class="t">Point</span>)
+point.z <span class="c"># =&gt; 3.0</span>
+decoder <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">TextDecoder</span>.new(default_srid <span class="o">=</span> <span class="n">4326</span>)
+decoder.decode(point_wkt_str).srid <span class="c"># =&gt; 4326</span></code></pre>
+<h3><a id="geo-json" class="anchor" href="#geo-json">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>GeoJSON</h3>
+<p>This library provides an optional extension to consume and (efficiently) produce a subset of GeoJSON. Only the above seven geometry objects are supported. GeoJSON's Feature and Feature Collection are not supported. In addition, no foreign properties are supported and parsing is case and order sensitive.</p>
+<p>By default, all 3D coordinates are XYZ; four or more coordinates are not supported by GeoJSON. Empty objects are supported, with their mode set to XY. Mixing empty objects with other 3D object within composite objects will raise a <code><a href="WKB/Error.html">WKB::Error</a></code>.</p>
+<p>You'll need to load the extension after the library. This will load Crystal's JSON module and add <code>.from_json</code> and <code>#to_json</code> to positions and geometry objects, together with their JSON-related methods.</p>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;wkb&quot;</span>
+<span class="k">require</span> <span class="s">&quot;wkb/geojson&quot;</span>
+
+point2D <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">Point</span>.new([<span class="n">1.0</span>, <span class="n">2.0</span>])
+
+point2D_json <span class="o">=</span> point2D.to_json
+point2D_json <span class="c"># =&gt; &quot;{\&quot;type\&quot;:\&quot;Point\&quot;,\&quot;coordinates\&quot;:[1.0,2.0]}&quot;</span>
+another_point2D <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">Point</span>.from_json(point2D_json)
+another_point2D <span class="o">==</span> point2D <span class="c"># =&gt; true</span>
+
+point2D.position.to_json <span class="c"># =&gt; &quot;[1.0,2.0]&quot;</span>
+
+point3D_json <span class="o">=</span> <span class="s">&quot;{\&quot;type\&quot;:\&quot;Point\&quot;,\&quot;coordinates\&quot;:[1.0,2.0,3.0]}&quot;</span>
+object <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">Object</span>.from_json(point3D_json)
+object.kind.point? <span class="c"># =&gt; true</span>
+point3D <span class="o">=</span> object.<span class="k">as</span>(<span class="t">WKB</span><span class="t">::</span><span class="t">Point</span>)
+point3D.mode.xyz? <span class="c"># =&gt; true</span>
+
+<span class="t">WKB</span><span class="t">::</span><span class="t">Point</span>.new(<span class="o">[]</span> <span class="k">of</span> <span class="t">Float64</span>).to_json <span class="c"># =&gt; &quot;{\&quot;type\&quot;:\&quot;Point\&quot;,\&quot;coordinates\&quot;:[]}&quot;</span></code></pre>
+<p>If you need more GeoJSON features I suggest using the following library by <a href="https://github.com/mamantoha">@mamantoha</a>:</p>
+<ul>
+<li>https://github.com/geocrystal/geojson</li>
+</ul>
+<p>Using both libraries, going from WKB to GeoJSON is straightforward; viceversa less so.</p>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;wkb&quot;</span>
+<span class="k">require</span> <span class="s">&quot;geojson&quot;</span>
+
+wkb_line_string <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">LineString</span>.new([[<span class="n">1.0</span>, <span class="n">2.0</span>], [<span class="n">4.0</span>, <span class="n">5.0</span>]])
+gjo_line_string <span class="o">=</span> <span class="t">GeoJSON</span><span class="t">::</span><span class="t">LineString</span>.new(wkb_line_string.to_coordinates)
+
+wkb_polygon <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">Polygon</span>.new([
+  [
+    [<span class="n">20.0</span>, <span class="n">30.0</span>],
+    [<span class="n">35.0</span>, <span class="n">35.0</span>],
+    [<span class="n">30.0</span>, <span class="n">20.0</span>],
+    [<span class="n">20.0</span>, <span class="n">30.0</span>]
+  ]
+])
+gjo_polygon <span class="o">=</span> <span class="t">GeoJSON</span><span class="t">::</span><span class="t">Polygon</span>.new(wkb_polygon.to_coordinates)
+
+
+point_json <span class="o">=</span> <span class="s">&quot;{\&quot;type\&quot;:\&quot;Point\&quot;,\&quot;coordinates\&quot;:[1.0,2.0]}&quot;</span>
+multi_point_json <span class="o">=</span> <span class="s">&quot;{\&quot;type\&quot;:\&quot;MultiPoint\&quot;,\&quot;coordinates\&quot;:[[1.0,2.0],[3.0,4.0]]}&quot;</span>
+
+<span class="c"># &quot;geojson&quot; uses the class `GeoJSON::Coordinates` as the basis for the `coordinates`</span>
+<span class="c">#   property of all of its geometry objects, class which itself wraps an `Array(Float64)`</span>
+<span class="c">#   in a property called `coordinates`.</span>
+
+<span class="c">#  Here we need to call two times `#coordinates`.</span>
+gjo_point <span class="o">=</span> <span class="t">GeoJSON</span><span class="t">::</span><span class="t">Point</span>.from_json(point_json)
+wkb_point <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">Point</span>.new(gjo_point.coordinates.coordinates)
+
+<span class="c">#  Here we need to map the array of `GeoJSON::Coordinates`.</span>
+gjo_multi_point <span class="o">=</span> <span class="t">GeoJSON</span><span class="t">::</span><span class="t">MultiPoint</span>.from_json(multi_point_json)
+wkb_multi_point <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">Point</span>.new(gjo_multi_point.coordinates.map(<span class="o">&amp;</span>.coordinates))</code></pre>
+<p>Given that the extension is optional, you could also implement your own (Geo)JSON serialization.</p>
+<h2><a id="geometries-on-a-database" class="anchor" href="#geometries-on-a-database">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Geometries on a Database</h2>
+<p>This library can be used to communicate with any system that implements WKB, including many database engines. In that case, you can either work at the bytes level doing the conversion yourself, or use  converters for <code><a href="WKB/Object.html">WKB::Object</a></code> and all its descendants for easier reading with <code>DB::Serializable</code> from <code>crystal-db</code>.</p>
+<p>Below is a full example to receive and transmit geometry data from and to PostGIS using <a href="https://github.com/will/crystal-pg">crystal-pg</a>, the Postgres driver for <a href="https://github.com/crystal-lang/crystal-db">crystal-db</a>.</p>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;db&quot;</span>
+<span class="k">require</span> <span class="s">&quot;pg&quot;</span>
+<span class="k">require</span> <span class="s">&quot;wkb&quot;</span>
+<span class="k">require</span> <span class="s">&quot;wkb/geojson&quot;</span> <span class="c"># For GeoJSON support</span>
+<span class="k">require</span> <span class="s">&quot;wkb/db&quot;</span> <span class="c"># For `DB::Serializable` support. Must be loaded after &quot;db&quot;!</span>
+
+decoder <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">BinDecoder</span>.new
+encoder <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">BinEncoder</span>.new(<span class="t">WKB</span><span class="t">::</span><span class="t">Flavor</span><span class="t">::</span><span class="t">Ext</span>) <span class="c"># or `ExtSRID` if you use SRID</span>
+
+polygon_json <span class="o">=</span> <span class="s">&lt;&lt;-JSON</span>
+<span class="s">  {
+    &quot;type&quot;: &quot;Polygon&quot;, 
+    &quot;coordinates&quot;: [
+      [
+          [35.0, 10.0],
+          [45.0, 45.0],
+          [15.0, 40.0],
+          [10.0, 20.0],
+          [35.0, 10.0]
+      ]
+    ]
+  }
+JSON</span>
+
+<span class="k">class</span> <span class="t">Place</span>
+  <span class="k">include</span> <span class="t">DB</span><span class="t">::</span><span class="t">Serializable</span>
+
+  property name : <span class="t">String</span>
+
+  @[<span class="t">DB</span><span class="t">::</span><span class="t">Field</span>(converter: <span class="t">WKB</span><span class="t">::</span><span class="t">DB</span><span class="t">::</span><span class="t">PointConverter</span>)]
+  property location : <span class="t">WKB</span><span class="t">::</span><span class="t">Point</span>
+<span class="k">end</span>
+
+<span class="t">DB</span>.open(<span class="s">&quot;postgres://user:password@host:port/db_name&quot;</span>) <span class="k">do</span> <span class="o">|</span>db<span class="o">|</span>
+  point_bytes <span class="o">=</span> db.scalar(<span class="s">&quot;SELECT &#39;POINT(1 2 3)&#39;::GEOMETRY;&quot;</span>).<span class="k">as</span>(<span class="t">Bytes</span>)
+  point <span class="o">=</span> decoder.decode(point_bytes).<span class="k">as</span>(<span class="t">WKB</span><span class="t">::</span><span class="t">Point</span>)
+  point.z <span class="c"># =&gt; 3.0</span>
+  point.to_json <span class="c"># =&gt; &quot;{\&quot;type\&quot;:\&quot;Point\&quot;,\&quot;coordinates\&quot;:[1.0,2.0,3.0]}</span>
+
+  line_string <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">LineString</span>.new([[<span class="n">1.0</span>, <span class="n">2.0</span>], [<span class="n">3.0</span>, <span class="n">4.0</span>]])
+  line_string_bytes <span class="o">=</span> encoder.encode(line_string)
+  num_points <span class="o">=</span> db.scalar(<span class="s">&quot;SELECT ST_NumPoints($1::GEOMETRY)&quot;</span>, line_string_bytes).<span class="k">as</span>(<span class="t">Int32</span>)
+  num_points <span class="c"># =&gt; 2</span>
+
+  polygon <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">Polygon</span>.from_json(polygon_json)
+  polygon_bytes <span class="o">=</span> encoder.encode(polygon)
+  polygon_perimeter <span class="o">=</span> db.scalar(<span class="s">&quot;SELECT ST_Perimeter($1::GEOMETRY)&quot;</span>, polygon_bytes).<span class="k">as</span>(<span class="t">Float64</span>)
+  polygon_perimeter <span class="c"># =&gt; 114.35571426165451</span>
+
+  query_str <span class="o">=</span> <span class="s">&quot;SELECT &#39;Neverland&#39; AS name, &#39;POINT(1 2)&#39;::GEOMETRY AS location&quot;</span>
+  places <span class="o">=</span> <span class="t">Place</span>.from_rs(db.query(query_str))
+  places.first.location.x <span class="c"># =&gt; 1.0</span>
+<span class="k">end</span></code></pre>
+<p>Please note the casting to <code>GEOMETRY</code> within PostGIS functions. Data is sent as <code>BYTEA</code>, and I've found that some functions accept the binary as is, while others expect a <code>GEOMETRY</code> datatype. I suggest to always cast.
+Unfortunately, and as far as I'm aware, in <code>crystal-pg</code> at the moment there is no support for custom types with dynamic OIDs such as those in PostGIS, hence the above casting seems unavoidable.</p>
+<h3><a id="use-with-or-ms" class="anchor" href="#use-with-or-ms">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Use with ORMs</h3>
+<p>Perhaps the ORM or framework of your choice supports creating custom fields when working with a database. This is the case of <a href="https://martenframework.com/">Marten</a> with its <a href="https://martenframework.com/docs/models-and-databases/how-to/create-custom-model-fields">custom model fields</a> and <a href="https://luckyframework.org/">Lucky</a> via the non-documented extensions for <a href="https://github.com/luckyframework/avram">Avram</a>.</p>
+<h4><a id="luckys-avram" class="anchor" href="#luckys-avram">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Lucky's Avram</h4>
+<p>Below just an example of creating an extension for Lucky's Avram to work with PostGIS. In this case we only support the generic <code><a href="WKB/Object.html">WKB::Object</a></code>, but you can be more specific if desired.</p>
+<pre><code class="language-crystal"><span class="k">abstract</span> <span class="k">struct</span> <span class="t">WKB</span><span class="t">::</span><span class="t">Object</span>
+  <span class="k">def</span> <span class="m">self</span>.adapter
+    <span class="t">Lucky</span>
+  <span class="k">end</span>
+
+  <span class="k">module</span> <span class="t">Lucky</span>
+    @@bin_decoder <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">BinDecoder</span>.new
+    @@bin_encoder <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">BinEncoder</span>.new
+    @@text_decoder <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">TextDecoder</span>.new
+    @@text_encoder <span class="o">=</span> <span class="t">WKB</span><span class="t">::</span><span class="t">TextEncoder</span>.new
+
+    <span class="k">alias</span> <span class="t">ColumnType</span> <span class="o">=</span> <span class="t">Bytes</span> <span class="c"># The base type of `WKB::Object` for our Postgres driver</span>
+    <span class="k">include</span> <span class="t">Avram</span><span class="t">::</span><span class="t">Type</span>
+
+    <span class="k">def</span> <span class="m">self</span>.criteria(query : <span class="t">T</span>, column) forall <span class="t">T</span>
+      <span class="t">Criteria</span>(<span class="t">T</span>, <span class="t">Bytes</span>).new(query, column)
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="m">from_db!</span>(value : <span class="t">Bytes</span>)
+      @@bin_decoder.decode(value)
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="m">parse</span>(value : <span class="t">WKB</span><span class="t">::</span><span class="t">Object</span>)
+      <span class="t">SuccessfulCast</span>(<span class="t">WKB</span><span class="t">::</span><span class="t">Object</span>).new(value)
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="m">parse</span>(value : <span class="t">Bytes</span>)
+      object <span class="o">=</span> @@bin_decoder.decode(value)
+      <span class="t">SuccessfulCast</span>(<span class="t">WKB</span><span class="t">::</span><span class="t">Object</span>).new(object)
+    <span class="k">rescue</span>
+      <span class="t">FailedCast</span>.new
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="m">parse</span>(value : <span class="t">String</span>)
+      object <span class="o">=</span> @@text_decoder.decode(value).<span class="k">as</span>(<span class="t">WKB</span><span class="t">::</span><span class="t">Object</span>)
+      <span class="t">SuccessfulCast</span>(<span class="t">WKB</span><span class="t">::</span><span class="t">Object</span>).new(object)
+    <span class="k">rescue</span>
+      <span class="t">FailedCast</span>.new
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="m">to_db</span>(value : <span class="t">WKB</span><span class="t">::</span><span class="t">Object</span>)
+      @@text_encoder.encode(value)
+    <span class="k">end</span>
+
+    <span class="k">class</span> <span class="t">Criteria</span>(<span class="t">T</span>, <span class="t">V</span>) <span class="o">&lt;</span> <span class="t">Avram</span><span class="t">::</span><span class="t">Criteria</span>(<span class="t">T</span>, <span class="t">V</span>)
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="c"># The following is needed to add support for `WKB::Object` in migrations</span>
+<span class="k">module</span> <span class="t">Avram</span><span class="t">::</span><span class="t">Migrator</span><span class="t">::</span><span class="t">Columns</span>
+  <span class="k">module</span> <span class="t">WKB</span>
+    <span class="k">class</span> <span class="t">ObjectColumn</span>(<span class="t">T</span>) <span class="o">&lt;</span> <span class="t">Base</span>
+      @default : <span class="t">T</span> <span class="o">|</span> <span class="t">Nil</span> <span class="o">=</span> <span class="n">nil</span>
+
+      <span class="k">def</span> <span class="m">initialize</span>(@name, @nilable, @default)
+      <span class="k">end</span>
+
+      <span class="c"># The datatype &quot;geometry is encoded as EWKB and it&#39;s the most used datatype in PostGIS.</span>
+      <span class="c">#   Another possible value is &quot;geography&quot;, useful when working on a global scale.</span>
+      <span class="c">#   See: https://postgis.net/workshops/postgis-intro/geography.html</span>
+      <span class="k">def</span> <span class="m">column_type</span> : <span class="t">String</span>
+        <span class="s">&quot;geometry&quot;</span> 
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
+<p>Remember to load your extension where appropriate in your Lucky's <code>app.cr</code>. For instance, you could create a folder <code>src/charms</code> to gather all Avram extensions and require it after your shards and before your models, like so:</p>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;./shards&quot;</span>
+
+<span class="k">require</span> <span class="s">&quot;../config/server&quot;</span>
+<span class="k">require</span> <span class="s">&quot;./app_database&quot;</span>
+<span class="k">require</span> <span class="s">&quot;../config/**&quot;</span>
+<span class="k">require</span> <span class="s">&quot;./charms/**&quot;</span> <span class="c"># Our WKB extension for Avram&#39;s lucky is within this folder</span>
+<span class="k">require</span> <span class="s">&quot;./models/base_model&quot;</span>
+<span class="c"># Rest of &quot;require&quot;</span></code></pre>
+<p>Now you can create migrations like this one:</p>
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">CreatePlace</span><span class="t">::</span><span class="t">V00000000000001</span> <span class="o">&lt;</span> <span class="t">Avram</span><span class="t">::</span><span class="t">Migrator</span><span class="t">::</span><span class="t">Migration</span><span class="t">::</span><span class="t">V1</span>
+  <span class="k">def</span> <span class="m">migrate</span>
+    create table_for(<span class="t">Place</span>) <span class="k">do</span>
+      primary_key id : <span class="t">Int64</span>
+      add_timestamps
+      add name : <span class="t">String</span>
+      add location : <span class="t">WKB</span><span class="t">::</span><span class="t">Object</span> <span class="c"># We can use `WKB::Object` for datatype &quot;geometry&quot;</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="m">rollback</span>
+    drop table_for(<span class="t">Place</span>)
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
+<p>For the respective model:</p>
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">Place</span> <span class="o">&lt;</span> <span class="t">BaseModel</span>
+  <span class="c"># columns for primary key and timestamps are already included by default</span>
+  table <span class="k">do</span>
+    column name : <span class="t">String</span>
+    column location : <span class="t">WKB</span><span class="t">::</span><span class="t">Object</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
+<p>You can further customize your extension(s) to support only specific types or other encodings, such as including the SRID or making it optional.</p>
+<p>For instance, to only support <code><a href="WKB/Point.html">WKB::Point</a></code> you would need to cast as necessary while parsing <code>Bytes</code> or <code>String</code> in the respective <code>Lucky</code> module:</p>
+<pre><code class="language-crystal">  <span class="k">def</span> <span class="m">parse</span>(value : <span class="t">Bytes</span>)
+    object <span class="o">=</span> @@bin_decoder.decode(value)
+    <span class="k">if</span> object.kind.point?
+      <span class="t">SuccessfulCast</span>(<span class="t">WKB</span><span class="t">::</span><span class="t">Point</span>).new(object.<span class="k">as</span>(<span class="t">WKB</span><span class="t">::</span><span class="t">Point</span>))
+    <span class="k">else</span>
+      raise <span class="s">&quot;Not a valid Point&quot;</span>
+    <span class="k">end</span>
+  <span class="k">rescue</span>
+    <span class="t">FailedCast</span>.new
+  <span class="k">end</span></code></pre>
+<p>Remember to also adapt as necessary the column type for Avram migrations:</p>
+<pre><code class="language-crystal">  <span class="k">def</span> <span class="m">column_type</span> : <span class="t">String</span>
+    <span class="c"># Accept only Points with default PostGIS SRID set 4326, the same as GeoJSON.</span>
+    <span class="s">&quot;geometry(point, 4326)&quot;</span> 
+  <span class="k">end</span></code></pre>
+<h2><a id="contributing" class="anchor" href="#contributing">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Contributing</h2>
+<ol>
+<li>Fork it (<a href="https://github.com/your-github-user/crystal-wkb/fork">https://github.com/your-github-user/crystal-wkb/fork</a>)</li>
+<li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
+<li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li>
+<li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
+<li>Create a new Pull Request</li>
+</ol>
+<h2><a id="contributors" class="anchor" href="#contributors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Contributors</h2>
+<ul>
+<li><a href="https://github.com/amauryt">Amaury Trujillo</a> - creator and maintainer</li>
+</ul>
+</div>
+</body>
+</html>
